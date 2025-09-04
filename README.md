@@ -390,3 +390,48 @@ graph TD
 
 Nesse exemplo, conseguimos organizar a informação, de modo que facilita o entendimento, e também o processamento dessas informações por um software.
 
+# Utilizando Azure IA para detectar sentimentos em uma review de restaurante.
+
+Utilizamos a feramenta do Azure Language Cognitive (https://language.cognitive.azure.com/tryout/sentiment) para detectar a emoção de uma reclamação de um restaurante.
+
+utilizamos essa reclamação encontrada no reclame aqui:
+```
+Comprei 6 big mec 4 batata e 4 coca só veio as coca reclamei no whatsapp preenchi o link e nada depois de 3 dias reclamei pelo próprio aplicativo do MEC e até agora nada eles me disseram que tenho que esperar ainda até o dia 10 pra receber ou seja fique sem o lanche sem o dinheiro ainda tenho que esperar por mais de 5 dias e o fim da [Editado pelo Reclame Aqui]
+```
+
+Na plataforma Azure AI obtvemos o seguinte resultado:
+```json
+{
+    "documents": [
+        {
+            "id": "id__1106",
+            "sentiment": "negative",
+            "confidenceScores": {
+                "positive": 0,
+                "neutral": 0,
+                "negative": 1
+            },
+            "sentences": [
+                {
+                    "sentiment": "negative",
+                    "confidenceScores": {
+                        "positive": 0,
+                        "neutral": 0,
+                        "negative": 1
+                    },
+                    "offset": 0,
+                    "length": 363,
+                    "text": "Comprei 6 big mec 4 batata e 4 coca só veio as coca reclamei no whatsapp preenchi o link e nada depois de 3 dias reclamei pelo próprio aplicativo do MEC e até agora nada eles me disseram que tenho que esperar ainda até o dia 10 pra receber ou seja fique sem o lanche sem o dinheiro ainda tenho que esperar por mais de 5 dias e o fim da [Editado pelo Reclame Aqui]",
+                    "targets": [],
+                    "assessments": []
+                }
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2025-01-01"
+}
+```
+
+100% para negativo, 0% para neutro e 0% para positivo. Isso é apenas a aplicação básica, pois podemos integrar esse resultado em outros serviços de IA, como Bot, e gerar uma resposta, ou gerar estatísticas em um dashboard.
