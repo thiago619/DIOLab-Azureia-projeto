@@ -348,7 +348,7 @@ Com esse texto obtivemos a seguinte saída:
 }
 ```
 
-Essa saída eu transformei em um gráfico para melhor visualização.
+Essa saída eu transformei em um gráfico para melhor visualização, e removi os dados sem relacionamentos.
 
 ```mermaid
 graph TD
