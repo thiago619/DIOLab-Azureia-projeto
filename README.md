@@ -387,3 +387,9 @@ graph TD
     Mauricio --> Avaros
 
 ```
+
+Nesse exemplo, conseguimos organizar a informação, de modo que facilita o entendimento, e também o processamento dessas informações por um software.
+
+# Exemplo real.
+
+Irei utilizar um exemplo do meu escopo. Irei criar um diagrama de entidades a partir de uma analise de requisitos e o relato de um cliente.
