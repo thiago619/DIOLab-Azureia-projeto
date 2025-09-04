@@ -352,27 +352,24 @@ Essa saída eu transformei em um gráfico para melhor visualização.
 
 ```mermaid
 graph TD
-    %% Pessoas
-    Bossao[Bossão]
-    Bosso[Bosso]
-    Gontrao[Gontrão]
-    Gundobaldo[Gundobaldo]
-    Ulao[Ulão]
-    Antescio[Antéscio]
-    Claudio[Cláudio]
-    Teodorico[Teodorico II]
-    Beto[Beto]
-    Mauricio[Maurício]
+    subgraph Persons
+        Bossao[Bossão]
+        Gontrao[Gontrão]
+        Gundobaldo[Gundobaldo]
+        Claudio[Cláudio]
+        Mauricio[Maurício]
+    end
 
-    %% Tipos de Pessoas
-    Oficial[oficial]
-    Franco[franco]
-    Comandantes[comandantes]
-    Pretendente[pretendente]
-    Visigodos[visigodos]
-    Emissario[emissário]
-    Imperador[imperador]
-    Avaros[ávaros]
+    subgraph PersonTypes
+        Oficial[oficial]
+        Franco[franco]
+        Comandantes[comandantes]
+        Pretendente[pretendente]
+        Visigodos[visigodos]
+        Emissario[emissário]
+        Imperador[imperador]
+        Avaros[ávaros]
+    end
 
     %% Relações inferidas
     Bossao --> Oficial
@@ -388,4 +385,5 @@ graph TD
 
     Mauricio --> Imperador
     Mauricio --> Avaros
+
 ```
